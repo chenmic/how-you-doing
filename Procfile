@@ -1,1 +1,1 @@
-web: gunicorn HowYouDoing.wsgi
+web: gunicorn HowYouDoing.HowYouDoing.wsgi
