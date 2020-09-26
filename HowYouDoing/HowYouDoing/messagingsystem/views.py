@@ -60,11 +60,14 @@ def sent(request):
 @permission_classes([IsAuthenticated])
 def read(request):
     unread_messages = Message.objects.filter(receiver=request.user, is_read=False).order_by('creation_date')
-    oldest_unread_message = unread_messages.values()[0]
-    message = Message.objects.get(pk=oldest_unread_message['id'])
-    message.is_read = True
-    message.save()
-    return HttpResponse(json.dumps(oldest_unread_message, cls=DjangoJSONEncoder), content_type='application/json')
+    if unread_messages:
+        oldest_unread_message = unread_messages.values()[0]
+        message = Message.objects.get(pk=oldest_unread_message['id'])
+        message.is_read = True
+        message.save()
+        return HttpResponse(json.dumps(oldest_unread_message, cls=DjangoJSONEncoder), content_type='application/json')
+    else:
+        return JsonResponse({"data": "No new messages."})
 
 
 @api_view(['DELETE'])
