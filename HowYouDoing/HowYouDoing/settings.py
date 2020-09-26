@@ -31,7 +31,7 @@ ALLOWED_HOSTS = ['how-you-doing.herokuapp.com']
 # Application definition
 
 INSTALLED_APPS = [
-    'HowYouDoing.HowYouDoing.messagingsystem',
+    'HowYouDoing.messagingsystem',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -57,7 +57,7 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
-ROOT_URLCONF = 'HowYouDoing.HowYouDoing.urls'
+ROOT_URLCONF = 'HowYouDoing.urls'
 
 TEMPLATES = [
     {
@@ -75,7 +75,7 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = 'HowYouDoing.HowYouDoing.wsgi.application'
+WSGI_APPLICATION = 'HowYouDoing.wsgi.application'
 
 
 # Database
@@ -126,3 +126,5 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.1/howto/static-files/
 
 STATIC_URL = '/static/'
+
+STATIC_ROOT = BASE_DIR / 'static/'
