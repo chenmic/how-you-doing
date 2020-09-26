@@ -31,7 +31,7 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
-    'HowYouDoing.messagingsystem',
+    'HowYouDoing.HowYouDoing.messagingsystem',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -57,7 +57,7 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
-ROOT_URLCONF = 'HowYouDoing.urls'
+ROOT_URLCONF = 'HowYouDoing.HowYouDoing.urls'
 
 TEMPLATES = [
     {
@@ -75,7 +75,7 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = 'HowYouDoing.wsgi.application'
+WSGI_APPLICATION = 'HowYouDoing.HowYouDoing.wsgi.application'
 
 
 # Database
